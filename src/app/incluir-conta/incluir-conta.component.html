@@ -1,0 +1,20 @@
+<div>
+  <h3>Adicionar Nova Conta</h3>
+</div>
+<form class="example-container" [formGroup]="contaForm" (ngSubmit)="incluirConta(contaForm.value)">
+  <mat-form-field>
+    <input matInput name="nome" placeholder="Nome" formControlName="nome">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" name="valorOriginal" placeholder="Valor Original" formControlName="valorOriginal">
+    </mat-form-field>
+  <mat-form-field>
+    <input matInput type="date"  name="dataVencimento" placeholder="Data Vencimento" formControlName="dataVencimento">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="date"  name="dataPagamento" placeholder="Data Pagamento" formControlName="dataPagamento">
+  </mat-form-field>
+
+
+  <button type="submit" [disabled]="!contaForm.valid" mat-button color="primary" >Adicionar</button>
+</form>
